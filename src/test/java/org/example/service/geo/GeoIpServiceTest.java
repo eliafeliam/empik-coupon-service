@@ -29,17 +29,23 @@ import static org.mockito.Mockito.*;
 class GeoIpServiceTest {
 
     @MockBean
+    @SuppressWarnings("unused")
     private RestTemplate restTemplate;
 
     @Autowired
+    @SuppressWarnings("unused")
     private GeoIpService geoIpService;
 
     private Cache cache;
 
     @Autowired
+    @SuppressWarnings("unused")
     private CacheManager cacheManager;
 
     @BeforeEach
+    @SuppressWarnings("all")
+    //safe to use @SuppressWarnings("all") since the cache will not be null,
+        // the library implementation is protected from returning null
     void setUp() {
         cache = cacheManager.getCache("geoIpCache");
         cache.clear();
@@ -137,6 +143,7 @@ class GeoIpServiceTest {
 
     @Configuration
     @EnableCaching(proxyTargetClass = true)
+    @SuppressWarnings("unused")
     static class TestConfig {
         @Bean
         CacheManager cacheManager() {
