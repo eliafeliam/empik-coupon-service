@@ -7,7 +7,7 @@ Produced by Eliasz Shabunia for Empik
 ## Requirements
 - Java 23+
 - PostgreSQL
-- Maven or Gradle
+- Gradle
 
 ## Build
 ```bash
